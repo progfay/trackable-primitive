@@ -1,0 +1,41 @@
+{
+  "name": "trackable-primitive",
+  "version": "1.0.0",
+  "description": "Primitive value that can trace processing in JavaScript/TypeScript",
+  "main": "lib/index.js",
+  "devDependencies": {
+    "@progfay/tsconfig": "1.0.1",
+    "@types/jest": "26.0.23",
+    "@typescript-eslint/eslint-plugin": "4.26.0",
+    "@typescript-eslint/parser": "4.26.0",
+    "eslint": "7.28.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-jest": "24.3.6",
+    "jest": "27.0.4",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.3.0",
+    "ts-jest": "27.0.2",
+    "typescript": "4.3.2"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "tsc -p tsconfig.json --exclude '**/*.test.ts'",
+    "lint": "run-p lint:*",
+    "lint:tsc": "tsc --noEmit -p ./tsconfig.json",
+    "lint:prettier": "prettier --check ./src/**/*.ts",
+    "lint:eslint": "eslint -c ./.eslintrc.js ./src/**/*.ts",
+    "format": "run-s format:prettier format:eslint",
+    "format:prettier": "prettier --write ./src/**/*.ts",
+    "format:eslint": "eslint --fix -c ./.eslintrc.js ./src/**/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/progfay/trackable-primitive.git"
+  },
+  "author": "progfay",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/progfay/trackable-primitive/issues"
+  },
+  "homepage": "https://github.com/progfay/trackable-primitive#readme"
+}
